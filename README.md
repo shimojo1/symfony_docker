@@ -1,5 +1,5 @@
 # clone
-git clone https:#github.com/shimojo1/symfony_docker.git
+git clone https://github.com/shimojo1/symfony_docker.git
 
 # 移動
 cd symfony_docker
