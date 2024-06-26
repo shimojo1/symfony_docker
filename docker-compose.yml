@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  php:
+    container_name: php-symfony
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+      - '9000:9000'
+      - '8000:8000'
+      - "5173:5173"
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - database
+  database:
+    container_name: db-symfony
+    build:
+      context: ./mysql
+      dockerfile: Dockerfile
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/initdb:/docker-entrypoint-initdb.d
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: symfony
+      MYSQL_USER: symfony
+      MYSQL_PASSWORD: symfony
