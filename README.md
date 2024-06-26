@@ -41,7 +41,7 @@ docker exec --workdir /var/www/html/symfony -it php-symfony php bin/console --ve
 
 
 参考:【初心者向け】初めてのSymfony4
-https:#tech.quartetcom.co.jp/2019/12/18/hello-symfony/
+https://tech.quartetcom.co.jp/2019/12/18/hello-symfony/
 
 ここからはSymfonyのメモ
 
