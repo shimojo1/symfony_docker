@@ -14,6 +14,7 @@ docker compose up -d
 cd src
 
 docker exec -it php-symfony composer create-project symfony/website-skeleton symfony 4.3.x
+
 なんか聞かれたらy とEnterを入力(2回くらい)
 
 # 所有ユーザを変更する(ローカルで編集するため)
@@ -29,7 +30,7 @@ cp .env .env.local
 vi .env.local
 
 # 以下部分をこのように書き換える
-DATABASE_URL="mysql:#root:root@db-symfony:3306/symfony?serverVersion=16&charset=utf8"
+DATABASE_URL="mysql://root:root@db-symfony:3306/symfony?serverVersion=16&charset=utf8"
 
 http://localhost
 これで開いて画面が表示されていればOK
